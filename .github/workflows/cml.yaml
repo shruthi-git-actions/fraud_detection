@@ -28,4 +28,4 @@ jobs:
           dvc pull
 
           # Reproduce pipeline if any changes detected in dependencies
-          dvc repro Training
+          dvc repro 
