@@ -27,5 +27,5 @@ jobs:
           # Pull latest data from remote
           dvc pull
 
-          # Reproduce pipeline if any changes detected in the dependencies
+          # Reproduce pipeline if any changes detected in dependencies
           dvc repro Training
