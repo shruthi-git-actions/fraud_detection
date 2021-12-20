@@ -35,11 +35,12 @@ test_fpr, test_tpr, te_thresholds = roc_curve(y_test, predictions_SVM)
 # Use accuracy_score function to get the accuracy
 print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, y_test)*100)
 Accuracy=accuracy_score(predictions_SVM, y_test)*100
-a={"Accuracy": Accuracy, "fpr": test_fpr,"tpr": test_tpr}
-b=a.tolist()
+#a={"Accuracy": Accuracy, "fpr": test_fpr,"tpr": test_tpr}
+#b=a.tolist()
+a='[{"Accuracy":Accuracy,"fpr":test_fpr,"tpr":test_tpr}]'
 import json
 with open('Output/Accuracy.json', 'w') as f:
-    json.dump(b, f,indent=4)
+    json.dump(a, f,indent=4)
     
 
 plt.plot(test_fpr, test_tpr, label=" AUC TEST ="+str(auc(test_fpr, test_tpr)))
