@@ -36,7 +36,8 @@ test_fpr, test_tpr, te_thresholds = roc_curve(y_test, predictions_SVM)
 print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, y_test)*100)
 import json
 with open('Output/Accuracy.json', 'w') as f:
-    json.dump(("accuracy":accuracy_score(predictions_SVM, y_test)*100), f)
+    json.dump({("accuracy":accuracy_score(predictions_SVM, y_test)*100)}, f)
+    
 '''
 plt.plot(test_fpr, test_tpr, label=" AUC TEST ="+str(auc(test_fpr, test_tpr)))
 plt.legend()
@@ -50,4 +51,4 @@ plt.show()
 a=confusion_matrix(y_test,predictions_SVM)
 b=a.tolist()
 with open('Output/Confusion_matrix.json', 'w') as f:
-    json.dump("metrics":b, f)
+    json.dump({"metrics":b}, f)
