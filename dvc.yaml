@@ -24,9 +24,11 @@ stages:
       - Data/y_test.csv
       - Models/Fraud_SVM.pkl
     
-    outs:
       
-      - Output/Accuracy.json
-      - Output/Confusion_matrix.json
+    metrics:
+      - Output/Accuracy.json:
+          cache: false
+      - Output/Confusion_matrix.json:
+          cache: false
 
 
