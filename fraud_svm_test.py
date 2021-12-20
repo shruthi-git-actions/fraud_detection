@@ -34,7 +34,7 @@ predictions_SVM = SVM.predict(x_test)
 test_fpr, test_tpr, te_thresholds = roc_curve(y_test, predictions_SVM)
 # Use accuracy_score function to get the accuracy
 print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, y_test)*100)
-Accuracy=accuracy_score(predictions_SVM, y_test)*100)
+Accuracy=accuracy_score(predictions_SVM, y_test)*100
 
 import json
 with open('Output/Accuracy.json', 'w') as f:
