@@ -29,3 +29,7 @@ jobs:
 
           # Reproduce pipeline if any changes detected in dependencies
           dvc repro 
+          
+          git fetch --prune --unshallow
+          dvc metrics diff --show-md master >> report.md
+          cml-send-comment report.md
