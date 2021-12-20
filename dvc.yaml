@@ -28,7 +28,6 @@ stages:
     metrics:
       - Output/Accuracy.json:
           cache: false
-      - Output/Confusion_matrix.json:
-          cache: false
+      
 
 
