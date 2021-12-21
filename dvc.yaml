@@ -23,6 +23,9 @@ stages:
       - Data/x_test.csv
       - Data/y_test.csv
       - Models/Fraud_SVM.pkl
+      
+    outs:
+      - Output/auc.png
     
       
     metrics:
