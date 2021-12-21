@@ -25,8 +25,11 @@ stages:
       - Models/Fraud_SVM.pkl
     
     outs:
+      - auc.png
+    
       
-      - Output/Accuracy.json
-      - Output/Confusion_matrix.json
+    metrics:
 
+      - Output/Accuracy.json:
+          cache: false
 

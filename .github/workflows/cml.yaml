@@ -28,4 +28,11 @@ jobs:
           dvc pull
 
           # Reproduce pipeline if any changes detected in dependencies
-          dvc repro Training
+          dvc repro
+
+	  git fetch --prune --unshallow
+          dvc metrics diff --show-md master >> report.md
+          cml-send-comment report.md
+          
+          # Add figure to report
+          cml-publish auc.png --md >> report1.md
