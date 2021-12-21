@@ -17,7 +17,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
 import pickle
 from sklearn.metrics import confusion_matrix
-
+import json
 
 x_test = pd.read_csv('Data/x_test.csv')
 x_test = x_test.iloc[1: , :]
@@ -37,10 +37,11 @@ print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, y_test)*100)
 Accuracy=accuracy_score(predictions_SVM, y_test)*100
 #a={"Accuracy": Accuracy, "fpr": test_fpr,"tpr": test_tpr}
 #b=a.tolist()
-a='[{"Accuracy":Accuracy,"fpr":test_fpr,"tpr":test_tpr}]'
-import json
+data = {'accuracy':accuracy,'fpr':test_fpr.tolist(),'tpr':test_tpr.tolist()}
+
 with open('Output/Accuracy.json', 'w') as f:
-    json.dump(a, f,indent=4)
+	json.dump(data,f, sort_keys=True, indent=4, separators=(',', ': '))
+
     
 
 plt.plot(test_fpr, test_tpr, label=" AUC TEST ="+str(auc(test_fpr, test_tpr)))
