@@ -35,4 +35,4 @@ jobs:
           cml-send-comment report.md
           
           # Add figure to report
-          cml-publish Output/auc.png --md >> report1.md
+          cml-publish auc.png --md >> report1.md
