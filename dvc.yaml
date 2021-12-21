@@ -25,7 +25,7 @@ stages:
       - Models/Fraud_SVM.pkl
       
     outs:
-      - Output/auc.png
+      - auc.png
     
       
     metrics:
