@@ -49,9 +49,9 @@ plt.legend()
 plt.xlabel("True Positive Rate")
 plt.ylabel("False Positive Rate")
 plt.title("AUC(ROC curve)")
-plt.savefig('auc.png')
+
 plot_confusion_matrix(SVM, x_test, y_test, normalize='true')
-plt.show()
+plt.savefig('auc.png')
 '''
 a=confusion_matrix(y_test,predictions_SVM)
 b=a.tolist()
