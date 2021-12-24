@@ -37,6 +37,7 @@ print(test_tpr)
 
 # Use accuracy_score function to get the accuracy
 print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, y_test)*100)
+
 accuracy=accuracy_score(predictions_SVM, y_test)*100
 print(accuracy)
 #a={"Accuracy": accuracy, "fpr": test_fpr,"tpr": test_tpr}
@@ -48,12 +49,31 @@ with open('Output/Accuracy.json', 'w') as f:
 	json.dump(data,f, sort_keys=True, indent=4, separators=(',', ': '))
     	
 
+Accuracy=accuracy_score(predictions_SVM, y_test)*100
+#a={"Accuracy": Accuracy, "fpr": test_fpr,"tpr": test_tpr}
+#b=a.tolist()
+data = {'accuracy':accuracy,'fpr':test_fpr.tolist(),'tpr':test_tpr.tolist()}
+
+with open('Output/Accuracy.json', 'w') as f:
+	json.dump(data,f, indent=4, separators=(',', ': '))
+
+    
+
+
 plt.plot(test_fpr, test_tpr, label=" AUC TEST ="+str(auc(test_fpr, test_tpr)))
 plt.legend()
 plt.xlabel("True Positive Rate")
 plt.ylabel("False Positive Rate")
 plt.title("AUC(ROC curve)")
-plt.savefig('auc.png')
 plot_confusion_matrix(SVM, x_test, y_test, normalize='true')
-plt.show()
+plt.savefig('auc.png')
+
+
+
+'''
+a=confusion_matrix(y_test,predictions_SVM)
+b=a.tolist()
+with open('Output/Confusion_matrix.json', 'w') as f:
+    json.dump(b, f)
+'''
 

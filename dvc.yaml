@@ -23,13 +23,16 @@ stages:
       - Data/x_test.csv
       - Data/y_test.csv
       - Models/Fraud_SVM.pkl
-    
+      
     outs:
       - auc.png
     
-      
-    metrics:
 
+      
+
+    metrics:
       - Output/Accuracy.json:
           cache: false
+      
+
 
