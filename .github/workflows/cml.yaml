@@ -37,12 +37,19 @@ jobs:
           dvc repro 
           
           git fetch --prune 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f00443c4fd03698a929dc05c5a12b6e7089b2cff
           dvc metrics diff --show-md master >> report.md
           
           
           # Add figure to report
           cml-publish auc.png --md >> report.md
+<<<<<<< HEAD
 	  cml-send-comment report.md
 
 
+=======
+          cml-send-comment report.md
+>>>>>>> f00443c4fd03698a929dc05c5a12b6e7089b2cff
