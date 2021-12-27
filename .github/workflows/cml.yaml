@@ -28,7 +28,7 @@ jobs:
           dvc pull
 
 
-<<<<<<< HEAD
+
           
           # Reproduce pipeline if any changes detected in the dependencies
           dvc repro 
@@ -42,17 +42,6 @@ jobs:
           
           # Add figure to report
           cml-publish confusion_mat.png --md >> report.md
-
+	  cml-publish auc.png --md >> report.md
 	  cml-send-comment report.md
 
-
-
-=======
-          dvc repro 
-          git fetch --prune
-          dvc metrics diff --show-md master > report.md
-          # Add figure to the report
-          echo "## Validating results by the region"
-          cml-publish auc.png --md >> report.md
-          cml-send-comment report.md
->>>>>>> d8c13cb117a9e66c90cb933491051e4192b23746
