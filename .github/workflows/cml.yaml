@@ -44,5 +44,3 @@ jobs:
           echo "## Validating results by region"
           cml-publish auc.png --md >> report.md
           cml-send-comment report.md
-	  
-	 
