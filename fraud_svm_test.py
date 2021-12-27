@@ -35,6 +35,16 @@ test_fpr, test_tpr, te_thresholds = roc_curve(y_test, predictions_SVM)
 print(test_fpr)
 print(test_tpr)
 
+plt.subplots(1, figsize=(10,10))
+plt.title('Receiver Operating Characteristic')
+a=plt.plot(test_fpr, test_tpr)
+plt.plot([0, 1], ls="--")
+plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+plt.show()
+plt.savefig('auc.png')
+
 # Use accuracy_score function to get the accuracy
 print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, y_test)*100)
 
@@ -60,15 +70,15 @@ with open('Output/Accuracy.json', 'w') as f:
     
 
 
-plt.plot(test_fpr, test_tpr, label=" AUC TEST ="+str(auc(test_fpr, test_tpr)))
-plt.legend()
-plt.xlabel("True Positive Rate")
-plt.ylabel("False Positive Rate")
-plt.title("AUC(ROC curve)")
-<<<<<<< HEAD
-plot_confusion_matrix(SVM, x_test, y_test, normalize='true')
-plt.savefig('auc.png')
+#a=plt.plot_roc_curve(test_fpr, test_tpr, label=" AUC TEST ="+str(auc(test_fpr, test_tpr)))
 
+#plt.legend()
+#plt.xlabel("True Positive Rate")
+#plt.ylabel("False Positive Rate")
+#plt.title("AUC(ROC curve)")
+plot_confusion_matrix(SVM, x_test, y_test, normalize='true')
+
+plt.savefig('confusion_mat.png')
 
 '''
 a=confusion_matrix(y_test,predictions_SVM)
