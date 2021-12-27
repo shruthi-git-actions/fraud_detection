@@ -70,21 +70,21 @@ with open('Output/Accuracy.json', 'w') as f:
     
 
 
-<<<<<<< HEAD
+
 #a=plt.plot_roc_curve(test_fpr, test_tpr, label=" AUC TEST ="+str(auc(test_fpr, test_tpr)))
 
 #plt.legend()
 #plt.xlabel("True Positive Rate")
 #plt.ylabel("False Positive Rate")
 #plt.title("AUC(ROC curve)")
-=======
+
 plt.plot(test_fpr, test_tpr, label=" AUC TEST ="+str(auc(test_fpr, test_tpr)))
 plt.legend()
 plt.xlabel("True Positive Rate")
 plt.ylabel("False Positive Rate")
 plt.title("AUC(ROC curve)")
 
->>>>>>> d8c13cb117a9e66c90cb933491051e4192b23746
+
 plot_confusion_matrix(SVM, x_test, y_test, normalize='true')
 
 plt.savefig('confusion_mat.png')

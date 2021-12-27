@@ -31,7 +31,7 @@ stages:
 
       
 
-    metrics:
+    plots:
       - Output/Accuracy.json:
           cache: false
       
