@@ -27,17 +27,10 @@ stages:
     outs:
       - auc.png
       - confusion_mat.png
-    
-
-      
-
-    plots:
+   plots:
       - Output/Accuracy.json:
           cache: false
           
-    plots:
-      - Output/Accuracy.json:
-          cache: false
-      
+
 
 

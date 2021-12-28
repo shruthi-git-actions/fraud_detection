@@ -27,20 +27,19 @@ jobs:
           # Pull latest data from remote
           dvc pull
 
-
-
           
           # Reproduce pipeline if any changes detected in the dependencies
           dvc repro 
           
           git fetch --prune 
 
-
-
-          dvc metrics diff --show-md master >> report.md
-          dvc plots show
+          dvc plots show auc.png
+          dvc plots show confusion_mat.png
           
           # Add figure to the report
           echo "## Validating results by region"
           cml-publish auc.png --md >> report.md
+          cml-publish confusion_mat.png --md >> report.md
+          cml-send-comment report.md
+          dvc metrics diff --show-md master >> report.md
           cml-send-comment report.md
