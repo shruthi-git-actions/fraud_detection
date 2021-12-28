@@ -33,7 +33,7 @@ jobs:
           # Reproduce pipeline if any changes detected in the dependencies
           dvc repro 
           
-          git fetch --prune 
+          git fetch --prune --unshallow
 
 
 
@@ -45,5 +45,6 @@ jobs:
           echo "## Validating results by region"
           cml-publish auc.png --md >> report.md
           cml-publish confusion_mat.png --md >> report.md
+          cml-send-comment report.md
           dvc metrics diff --show-md master >> report.md
           cml-send-comment report.md
