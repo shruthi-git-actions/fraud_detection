@@ -39,7 +39,7 @@ jobs:
 
           
 
-          dvc plots diff
+          dvc plots diff master
           
           
           # Add figure to the report
