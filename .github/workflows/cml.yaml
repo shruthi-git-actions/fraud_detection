@@ -36,16 +36,15 @@ jobs:
 
 
 
-
-          
+          # Add figure to the report
+          echo "## Validating results by region"
 
           dvc plots show
           
           
-          # Add figure to the report
-          echo "## Validating results by region"
-          cml-publish auc.png --md >> report.md
-          cml-publish confusion_mat.png --md >> report.md
-          cml-send-comment report.md
+          
+          
+          
+          
           dvc metrics diff --show-md master >> report.md
           cml-send-comment report.md
