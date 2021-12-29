@@ -42,7 +42,7 @@ stages:
 
       - plots.json:
           cache: false
-          x: actual
-          y: predicted
+          x: test_fpr
+          y: test_tpr
 
 
