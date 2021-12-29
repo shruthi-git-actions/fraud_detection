@@ -39,7 +39,7 @@ jobs:
 
           
 
-          dvc plots diff master
+          dvc plots diff plots.json
           
           
           # Add figure to the report
