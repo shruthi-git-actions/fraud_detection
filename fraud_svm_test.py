@@ -64,8 +64,17 @@ Accuracy=accuracy_score(predictions_SVM, y_test)*100
 #b=a.tolist()
 data1 = {'accuracy':accuracy}
 
-with open('plots.json', 'w') as f:
-	json.dump(data1,f, indent=4, separators=(',', ': '))
+with open('plots.json', 'w') as fd:
+	json.dump(
+        {
+            "plots": [
+                {"fpr": fp, "tpr": tp, "threshold": t}
+                for fp, tp, t in zip(test_fpr.tolist(), test_tpr.tolist(), te_thresholds.tolist())
+            ]
+        },
+        fd,
+        indent=4,
+    )
 
     
 
