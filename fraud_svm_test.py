@@ -62,10 +62,10 @@ with open('Output/Accuracy.json', 'w') as f:
 Accuracy=accuracy_score(predictions_SVM, y_test)*100
 #a={"Accuracy": Accuracy, "fpr": test_fpr,"tpr": test_tpr}
 #b=a.tolist()
-data = {'accuracy':accuracy,'fpr':test_fpr.tolist(),'tpr':test_tpr.tolist()}
+data1 = {'accuracy':accuracy}
 
-with open('Output/Accuracy.json', 'w') as f:
-	json.dump(data,f, indent=4, separators=(',', ': '))
+with open('plots.json', 'w') as f:
+	json.dump(data1,f, indent=4, separators=(',', ': '))
 
     
 
