@@ -1,5 +1,5 @@
 params:
   C: 2.0
   kernel: linear
-  degree: 2
+  degree: 3
   gamma: auto
