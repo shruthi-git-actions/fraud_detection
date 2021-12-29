@@ -28,12 +28,17 @@ stages:
       - auc.png
       - confusion_mat.png
 
+
     metrics:   
 
       - Output/Accuracy.json:
           cache: false
 
-    plots:   
+  
+
+
+
+    plots:    
 
       - plots.json:
           cache: false

@@ -28,19 +28,17 @@ jobs:
           dvc pull
 
           
-          # Reproduce pipeline if any changes detected in the dependencies
+          # Reproduce pipeline if any changes detected in  dependencies
           dvc repro 
           
           git fetch --prune --unshallow
-<<<<<<< HEAD
-=======
+
 
 
 
 
           
 
->>>>>>> 40d4dba370072fdd54116a56192d991597e29516
           dvc plots show auc.png
           dvc plots show confusion_mat.png
           
