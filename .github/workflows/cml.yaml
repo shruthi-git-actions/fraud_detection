@@ -39,8 +39,8 @@ jobs:
 
           
 
-          dvc plots show auc.png
-          dvc plots show confusion_mat.png
+          dvc plots diff
+          
           
           # Add figure to the report
           echo "## Validating results by region"
