@@ -42,7 +42,7 @@ stages:
 
       - plots.json:
           cache: false
-          x: test_fpr
-          y: test_tpr
+          x: fp
+          y: tp
 
 
