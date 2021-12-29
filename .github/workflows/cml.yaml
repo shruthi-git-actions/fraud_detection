@@ -32,13 +32,6 @@ jobs:
           dvc repro 
           
           git fetch --prune --unshallow
-
-<<<<<<< HEAD
-=======
-
-
-          
->>>>>>> 8f7f308bf3b87fcec8b066c211e51e4603e039b2
           dvc plots show auc.png
           dvc plots show confusion_mat.png
           
