@@ -24,8 +24,7 @@ stages:
       - Data/y_test.csv
       - Models/Fraud_SVM.pkl
       
-    outs:
-      - confusion_mat.png
+    
 
 
     metrics:   
@@ -45,6 +44,9 @@ stages:
           y: tpr
 
       - auc.png:
+          cache: false
+
+      - confusion_mat.png:
           cache: false
 
 
