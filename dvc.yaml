@@ -25,7 +25,6 @@ stages:
       - Models/Fraud_SVM.pkl
       
     outs:
-      - auc.png
       - confusion_mat.png
 
 
@@ -41,6 +40,9 @@ stages:
     plots:    
 
       - plots.json:
+          cache: false
+
+      - auc.png:
           cache: false
 
 
