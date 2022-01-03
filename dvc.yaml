@@ -41,6 +41,8 @@ stages:
 
       - plots.json:
           cache: false
+          x: fpr
+          y: tpr
 
       - auc.png:
           cache: false
